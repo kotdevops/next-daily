@@ -5,6 +5,10 @@
     font-family: 'Times New Roman', Times, serif;
 }
 
+html,body{
+    overflow-x: hidden;
+}
+
 #logo {
     height: 70px;
     width: auto;
@@ -74,7 +78,40 @@
 }
 
 #footer {
-    background-color: #28a745;
+    #newsletter{
+        max-height: 350px;
+        background-color: #28a745;
+        color: #ffffff;
+
+        #inputEmail{
+            margin: 0 auto;
+            text-align: center;
+            max-width: 650px;
+        }            
+        .btnSubmit{
+            display: block;
+            margin: 0 auto;
+        }
+    }
+    #connect{
+        //max-height: 100px;
+        color: #ffffff;
+        height: auto;
+        background-color: rgb(56, 56, 56);
+
+        #connectIconRow{
+            text-align: center;
+
+            .connectIcons{
+                text-align: center;
+                font-size: 2.5rem;
+                margin: 0rem 0.8rem;
+            }
+            .connectIcons:hover{
+                font-size: 2.7rem;
+            }
+        }
+    }
 }
 
 #iframePost {
@@ -84,12 +121,30 @@
 }
 
 
+
 // Extra small devices (portrait phones, less than 576px)
 // No media query for `xs` since this is the default in Bootstrap
 #allContent {
     padding-left: 0px;
     padding-right: 0px;
 }
+
+@media (max-width: 567px) {
+    #footer {
+        #connect{
+            #connectIconRow{
+                .connectIcons{
+                    font-size: 2rem;
+                    margin: 0rem 0.5rem;
+                }
+                .connectIcons:hover{
+                    font-size: 2.3rem;
+                }
+            }
+        }
+    }
+}
+
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
     #allContent {
