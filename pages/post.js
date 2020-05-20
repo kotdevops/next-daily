@@ -1,10 +1,11 @@
 import Head from "next/head";
 import Layout from "../components/layout";
 import css from "./main.global.scss"
+import PostsController from "../controller/posts";
 import { Container, Nav, Image, ListGroup, Card, Button, Dropdown, Navbar, Col, Media, Row } from 'react-bootstrap';
 
 
-export default function Post() {
+export default function Post({query, Post}) {
   return (
     <Layout>
       <Container id="secondNavbarContainer" fluid bg="success">
@@ -20,8 +21,13 @@ export default function Post() {
         </Container>
       </Container>
       <Container fluid>
-        <iframe id="iframePost" src="https://news.sky.com/story/coronavirus-how-the-pandemic-is-ruining-the-european-economy-11978579"></iframe>
+        <iframe id="iframePost" src={Post.url}></iframe>
       </Container>
     </Layout>
   )
+}
+
+Post.getInitialProps = async ({ query }) => {
+    const Post = await PostsController.getSinglePost(query.slug)
+    return { query, Post }
 }
