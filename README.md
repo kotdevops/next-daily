@@ -26,4 +26,4 @@ Please go to this [link](https://next-dailyplant.herokuapp.com/) to check this N
 
 ## Contributors
 
-![Auto suggestion](img/frank.jpg)
+![Auto suggestion](https://github.com/kotdevops)
